@@ -1,12 +1,15 @@
 import countriesTpl from '../templates/countries.hbs';
 import countryTpl from '../templates/country.hbs';
+import { showNotificationToMany } from './notification';
 
 import refs from './refs';
 
 function updateCountriesMarkup(data) {
   const countElementsObj = Object.keys(data).length;
 
-  if (countElementsObj === 1) {
+  if (countElementsObj > 10) {
+    showNotificationToMany();
+  } else if (countElementsObj === 1) {
     countryInformation(data);
   } else counryList(data);
 }

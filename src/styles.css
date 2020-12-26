@@ -29,8 +29,11 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
+
 .title {
   font-size: 36px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .information {
