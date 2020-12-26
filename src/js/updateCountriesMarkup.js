@@ -8,8 +8,7 @@ function updateCountriesMarkup(data) {
 
   if (countElementsObj === 1) {
     countryInformation(data);
-  }
-  counryList(data);
+  } else counryList(data);
 }
 
 function counryList(data) {
