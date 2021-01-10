@@ -1,17 +1,20 @@
 import countriesTpl from '../templates/countries.hbs';
 import countryTpl from '../templates/country.hbs';
-import { showNotificationToMany } from './notification';
+import { showNotificationToMany, showNotificationFail } from './notification';
 
 import refs from './refs';
 
 function updateCountriesMarkup(data) {
-  const countElementsObj = Object.keys(data).length;
+  // console.log(typeof data);
+  // console.log(data.length);
 
-  if (countElementsObj > 10) {
+  if (data.length > 10) {
     showNotificationToMany();
-  } else if (countElementsObj === 1) {
+  } else if (data.length === 1) {
     countryInformation(data);
-  } else counryList(data);
+  } else if (data.length > 1 && data.length <= 10) {
+    counryList(data);
+  } else showNotificationFail();
 }
 
 function counryList(data) {
