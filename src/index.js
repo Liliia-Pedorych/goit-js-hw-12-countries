@@ -14,8 +14,9 @@ refs.searchField.addEventListener(
     // if (refs.countriesName !== countryName) {
     //   showNotificationFail();
     // }
-
-    fetchCountriesName(countryName).then(updateCountriesMarkup);
+    if (countryName !== '') {
+      fetchCountriesName(countryName).then(updateCountriesMarkup);
+    }
   }, 1000),
 );
 
